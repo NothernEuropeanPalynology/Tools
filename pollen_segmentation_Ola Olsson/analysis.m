@@ -18,11 +18,14 @@
 % save_stacked: bool value to store stacked images with bounding boxes of objects.
 %
 % --- Optional parameters-----
-% alpha:
-% focus:
-% nhsize:
-% sth:
+% drawBoxes:    bool value to draw bounding boxes on stacked img.
 %
+% alpha:        Size of focus measure window (9).
+% focus:        Vector with the focus of each frame.
+% nhsize:       A scalar in (0,1]. Default is 0.2. See [1] for details.
+% sth:          A scalar. Default is 13. See [1] for details.
+%
+% ranks:        How many images from the image list should be stacked onto each other.
 % se_size:      integer value defining the size of the strel used in image dilation and eroding.
 % min_size:     float value between s0 and 1 defining the min area ratio an object of interest will cover.
 % max_size:     float value between 0 and 1 defining the max area ratio an object of interest will cover.
@@ -57,7 +60,7 @@ function metadata = analysis(srcDir, dstDir, metadataFile, save_stacked, varargi
           [OID_counter, bboxes] = segmentPollen(stacked, opts.OID_counter, opts.size, opts.se_size, opts.min_size,
             opts.max_size, opts.checkColor, opts.color, opts.colorRatio);
         else
-          rankedFiles = rankedFocusPlanes(filenames, 5); %TODO: add this paramater as function input
+          rankedFiles = rankedFocusPlanes(filenames, opts.ranks);
           stacked = fstack(rankedFiles); % Stacks images using fstack algorithm by S. Perutz (2016)
           [OID_counter, bboxes] = segmentPollen(stacked, opts.OID_counter, opts.size, opts.se_size, opts.min_size,
             opts.max_size, opts.checkColor, opts.color, opts.colorRatio); % Extracts image labels based on Ola Olsson et al. (2021)
@@ -67,11 +70,14 @@ function metadata = analysis(srcDir, dstDir, metadataFile, save_stacked, varargi
 
         if (length(fieldnames(bboxes)) >= 1)
           saveImageArea(bboxes, filenames, dstDir); % Saves individual pollen grains on all z-planes.
-          opts.metadata.(xField).bboxes = bboxes;
-          stacked = drawBoundingBoxes(stacked, bboxes, 10);
+          opts.metadata.(xField).bboxes = bboxes; % Stores bounding boxes in metadata
+
+          if opts.drawBoxes
+            stacked = drawBoundingBoxes(stacked, bboxes, 10); %Draws bounding boxes onto the stacked img.
+          endif
         endif
 
-        if save_stacked
+        if save_stacked % Saves the stacked img with drawn bounding_boxes.
           imwrite(stacked, fullfile(opts.macroPath, strcat("OD_", xField,".jpg")), 'Quality', 30); % Stores focus stacked image.
         endif
 
@@ -129,16 +135,21 @@ function metadata = analysis(srcDir, dstDir, metadataFile, save_stacked, varargi
     input_data.addOptional('focus', 1:5, @(x) isnumeric(x) && isvector(x));
     input_data.addOptional('nhsize', 9, @(x) isnumeric(x) && isscalar(x));
     input_data.addOptional('sth', 13, @(x) isnumeric(x) && isscalar(x));
+    input_data.addOptional('drawBoxes'. true @(x) isbool(x));
 
     %Options for object detection algorithm:
+    input_data.addOptional('ranks', 5, @(x) isnumeric(x) && isscalar(x) && (x>0));
     input_data.addOptional('se_size', 7, @(x) isnumeric(x) && isscalar(x));
     input_data.addOptional('min_size', 0.001, @(x) isnumeric(x) && isvector(x)&& (x>0) && (x<=1));
     input_data.addOptional('max_size', 0.5, @(x) isnumeric(x) && isscalar(x) && (x>0) && (x<=1));
     input_data.addOptional('checkColor', true, @(x) isbool(x));
     input_data.addOptional('color', [220, 100, 150], @(x) ismatrix(x) && all(isscalar(x)) && (size(x == 3)));
     input_data.addOptional('colorRatio', 0.01, @(x) isnumeric(x) && isscalar(x) && (x>0) && (x<=1));
+
+    %Parsing optional parameters.
     parse(input_data, varargin{:});
     options.alpha = input_data.Results.alpha;
+    options.drawBoxes = input_data.Results.drawBoxes;
     options.focus = input_data.Results.focus;
     options.nhsize = input_data.Results.nhsize;
     options.sth = input_data.Results.sth;
