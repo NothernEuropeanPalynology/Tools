@@ -1,5 +1,5 @@
 
-function im = fstack(imlist, varargin)
+function im = fstack(imlist, opts)
   % Focus stacking.
   % This script is adapted from the implementation in MATLAB.
   % Please check this code for further information:
@@ -38,13 +38,13 @@ function im = fstack(imlist, varargin)
   %Jan/2016
   %Parse inputs:
 
-  opts = parseInputs(imlist, varargin{:});
   M = opts.size(1);
   N = opts.size(2);
   P = opts.size(3);
   %********* Read images and compute fmeasure **********
   %Initialize:
   fm = zeros(opts.size);
+
   if opts.RGB
       imagesR = zeros(M, N);
       imagesG = zeros(M, N);
@@ -101,7 +101,6 @@ function im = fstack(imlist, varargin)
   else
       im = uint8(sum((imagesG.*fm), 3)./fmn);
   end
-
 end
 
 
@@ -146,29 +145,6 @@ function FM = gfocus(im, WSize)
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function options = parseInputs(imlist, varargin)
-  % Determine image size and type:
-  im = imread(imlist{1});
-  options.RGB = (ndims(im)==3);
-  M = size(im, 1);
-  N = size(im, 2);
-  P = length(imlist);
-  options.size = [M, N, P];
-  input_data = inputParser;
-  input_data.CaseSensitive = false;
-  input_data.StructExpand = true;
-  input_data.addOptional('alpha', 0.2, @(x) isnumeric(x) && isscalar(x) && (x>0) && (x<=1));
-  input_data.addOptional('focus', 1:P, @(x) isnumeric(x) && isvector(x));
-  input_data.addOptional('nhsize', 9, @(x) isnumeric(x) && isscalar(x));
-  input_data.addOptional('sth', 13, @(x) isnumeric(x) && isscalar(x));
-  parse(input_data, varargin{:});
-  options.alpha = input_data.Results.alpha;
-  options.focus = input_data.Results.focus;
-  options.nhsize = input_data.Results.nhsize;
-  options.sth = input_data.Results.sth;
-end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

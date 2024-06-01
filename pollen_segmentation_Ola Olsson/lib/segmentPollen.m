@@ -1,4 +1,4 @@
-function [OID_counter, bboxes] = segmentPollen(input, OID_counter, dims, se_size, min_size, max_size, checkColor, color, colorRatio)
+function [OID_counter, bboxes] = segmentPollen(input, opts)
 
   % This code requires the Image Processing package "image" version 2.14.0
   %
@@ -28,21 +28,23 @@ function [OID_counter, bboxes] = segmentPollen(input, OID_counter, dims, se_size
   %
 
   % Determine image size and type:
+  OID_counter = opts.OID_counter;
   if ischar(input)
     I = imread(input); % Load image
+
   elseif strcmp(typeinfo(input), "uint8 matrix")
     I = input;
   endif
 
-  area = dims(1)*dims(2);
-
-  se = strel("disk", se_size, 0); % Filter to use for dilation and eroding.
+  area = opts.size(1)*opts.size(2);
+  se = strel("disk", opts.se_size, 0); % Filter to use for dilation and eroding.
   IMG = rgb2gray(I); % Transform into grayscale
   IMG = edge(IMG, "Sobel", 0.02); % Use edge detection to amplify regions of interest
   IMG = imdilate(IMG, se); % Dilate these edges in order to circumvent the loss of weak edges.
   IMG = imfill(IMG, "holes"); % Fill the hole between edges to get areas of interest.
   IMG = imerode(IMG, se); % remove small artifacts that most likely are not pollen or NPP
-  IMG = bwareafilt(IMG, [area*min_size area*max_size]); % The remaining areas should be between 1500 px. and 1000000 px. large. These value may need to be adapted based on the image size.
+
+  IMG = bwareafilt(IMG, [area*opts.min_size area*opts.max_size]); % The remaining areas should be between 1500 px. and 1000000 px. large. These value may need to be adapted based on the image size.
   #TODO: change the above limits based on percentages of the image.
   BW = IMG; % Use BW to create the binary mask.
   D = -bwdist(~IMG); % Create a distance matrix which calculates the distance of every pixel to the edge of an object.
@@ -51,10 +53,9 @@ function [OID_counter, bboxes] = segmentPollen(input, OID_counter, dims, se_size
   labels = bwlabel(DL); % Use the watershed analysis to create individual labels of different objects.
   binary_mask = BW == 1; % Create a binary mask of where points are 1, based on the above image processing steps.
   labels(repmat(~binary_mask, [1,1])) = 0; %Overlay the labels with the mask such that black areas remain black.
-  stats = regionprops(labels, "Centroid", "MajorAxisLength"); % Summarize the position and size of objects.
+  stats = regionprops(labels, "Centroid", "MajorAxisLength", "MinorAxisLength"); % Summarize the position and size of objects.
 
   bboxes = struct();
-
 
   % Iterate through each object
   for i = 1:size(stats, 1)
@@ -63,24 +64,26 @@ function [OID_counter, bboxes] = segmentPollen(input, OID_counter, dims, se_size
       w = stats(i).MajorAxisLength;    % Width of the bounding box
       h = stats(i).MajorAxisLength;   % Height of the bounding box
 
-      if or(w >= dims(1) * 0.8 , h >= dims(2)*0.8)
+      if or(w >= opts.size(1) * 0.8 , h >= opts.size(2)*0.8)
         continue
       endif
 
       x1 = x - w/2;
       y1 = y - h/2;
 
-      [at_edge bbox] = edgeBox(x1, y1, w, h, dims(1), dims(2));
+      [at_edge bbox] = edgeBox(x1, y1, w, h, opts.size(1), opts.size(2));
 
-      if checkColor
-        colorContent = calculateColorRatio(I(bbox(1):bbox(2),bbox(3):bbox(4),:),color);
-        if  colorContent < colorRatio
+      if opts.checkColor
+        colorContent = calculateColorRatio(I(bbox(1):bbox(2),bbox(3):bbox(4),:),opts.color);
+        if  colorContent < opts.colorRatio
           continue
         endif
       endif
       bboxes.(num2str(OID_counter)).centroid = [x y];
       bboxes.(num2str(OID_counter)).at_edge = at_edge;
       bboxes.(num2str(OID_counter)).label = strcat("Object_", num2str(OID_counter));
+      bboxes.(num2str(OID_counter)).minorAxis = stats(i).MinorAxisLength;
+      bboxes.(num2str(OID_counter)).majorAxis = stats(i).MajorAxisLength;
       bboxes.(num2str(OID_counter)).bbox = bbox;
       OID_counter = OID_counter+1;
   endfor

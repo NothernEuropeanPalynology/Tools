@@ -1,0 +1,1139 @@
+# Created by Octave 9.1.0, Sat Jun 01 19:05:58 2024 GMT <unknown@TheArchive>
+# name: metadata
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 21
+# name: size
+# type: matrix
+# rows: 1
+# columns: 3
+ 2028 2028 10
+
+
+# name: macroPath
+# type: sq_string
+# elements: 1
+# length: 32
+./Output_OD with filename//macro
+
+
+# name: OID_counter
+# type: scalar
+18
+
+
+# name: savePollenImages
+# type: bool
+1
+
+
+# name: stackImages
+# type: bool
+0
+
+
+# name: alpha
+# type: scalar
+0.20000000000000001
+
+
+# name: focus
+# type: double_range
+# base, limit, increment
+1 10 1
+
+
+# name: nhsize
+# type: scalar
+9
+
+
+# name: sth
+# type: scalar
+13
+
+
+# name: drawBoxes
+# type: bool
+1
+
+
+# name: ranks
+# type: scalar
+10
+
+
+# name: se_size
+# type: scalar
+7
+
+
+# name: min_size
+# type: scalar
+0.001
+
+
+# name: max_size
+# type: scalar
+0.5
+
+
+# name: checkColor
+# type: bool
+1
+
+
+# name: color
+# type: matrix
+# rows: 1
+# columns: 3
+ 220 100 150
+
+
+# name: colorRatio
+# type: scalar
+0.01
+
+
+# name: useFilename
+# type: bool
+1
+
+
+# name: RGB
+# type: bool
+1
+
+
+# name: metadata
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 1
+# name: X1_Y1
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 4
+# name: filenames
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 15
+# name: Z-1
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+X1_Y1_Z-1.jpg
+
+
+
+
+
+# name: Z-2
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+X1_Y1_Z-2.jpg
+
+
+
+
+
+# name: Z-3
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+X1_Y1_Z-3.jpg
+
+
+
+
+
+# name: Z-4
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+X1_Y1_Z-4.jpg
+
+
+
+
+
+# name: Z-5
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+X1_Y1_Z-5.jpg
+
+
+
+
+
+# name: Z-6
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+X1_Y1_Z-6.jpg
+
+
+
+
+
+# name: Z-7
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+X1_Y1_Z-7.jpg
+
+
+
+
+
+# name: Z0
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+X1_Y1_Z0.jpg
+
+
+
+
+
+# name: Z1
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+X1_Y1_Z1.jpg
+
+
+
+
+
+# name: Z2
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+X1_Y1_Z2.jpg
+
+
+
+
+
+# name: Z3
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+X1_Y1_Z3.jpg
+
+
+
+
+
+# name: Z4
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+X1_Y1_Z4.jpg
+
+
+
+
+
+# name: Z5
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+X1_Y1_Z5.jpg
+
+
+
+
+
+# name: Z6
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+X1_Y1_Z6.jpg
+
+
+
+
+
+# name: Z7
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+X1_Y1_Z7.jpg
+
+
+
+
+
+
+
+# name: bboxes
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 18
+# name: 0
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 216.33804397734775 310.25442579460105
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_0
+
+
+# name: minorAxis
+# type: scalar
+157.35666157578154
+
+
+# name: majorAxis
+# type: scalar
+159.89226733279992
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 230 390 136 296
+
+
+
+
+# name: 1
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 364.97103067726465 540.77369769428003
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_1
+
+
+# name: minorAxis
+# type: scalar
+118.8906239602281
+
+
+# name: majorAxis
+# type: scalar
+164.22366574967879
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 459 623 283 447
+
+
+
+
+# name: 2
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 420.97283163264763 1026.8353316326636
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_2
+
+
+# name: minorAxis
+# type: scalar
+135.90984880453121
+
+
+# name: majorAxis
+# type: scalar
+147.80303814728089
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 953 1101 347 495
+
+
+
+
+# name: 3
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 175.18657705414427 1764.4596270352017
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_3
+
+
+# name: minorAxis
+# type: scalar
+145.32197743496405
+
+
+# name: majorAxis
+# type: scalar
+215.28624053732776
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1657 1872 68 283
+
+
+
+
+# name: 4
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 59.917312661489859 1853.5529715761652
+
+
+# name: at_edge
+# type: bool
+1
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_4
+
+
+# name: minorAxis
+# type: scalar
+111.26381574504188
+
+
+# name: majorAxis
+# type: scalar
+177.56133834435596
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1765 1942 1 178
+
+
+
+
+# name: 5
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 647.00339707414116 1531.1205413401944
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_5
+
+
+# name: minorAxis
+# type: scalar
+149.49073271492895
+
+
+# name: majorAxis
+# type: scalar
+157.16618818096242
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1453 1610 568 726
+
+
+
+
+# name: 6
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 822.6334798242226 1976.7070715141708
+
+
+# name: at_edge
+# type: bool
+1
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_6
+
+
+# name: minorAxis
+# type: scalar
+120.1264185741321
+
+
+# name: majorAxis
+# type: scalar
+141.01756019656108
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1887 2028 752 893
+
+
+
+
+# name: 7
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1031.1948276968503 345.04440736700514
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_7
+
+
+# name: minorAxis
+# type: scalar
+140.7494550204128
+
+
+# name: majorAxis
+# type: scalar
+144.64035335082076
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 273 417 959 1104
+
+
+
+
+# name: 8
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 980.7966312056675 561.98546099290706
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_8
+
+
+# name: minorAxis
+# type: scalar
+145.10943091321664
+
+
+# name: majorAxis
+# type: scalar
+149.41152886350926
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 487 637 906 1056
+
+
+
+
+# name: 9
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 986.29497831422839 1716.1017923394329
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 8
+Object_9
+
+
+# name: minorAxis
+# type: scalar
+153.42325268318794
+
+
+# name: majorAxis
+# type: scalar
+161.39180744787092
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1635 1797 906 1067
+
+
+
+
+# name: 10
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1401.9943850109585 614.59908978072383
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 9
+Object_10
+
+
+# name: minorAxis
+# type: scalar
+146.17073407919466
+
+
+# name: majorAxis
+# type: scalar
+148.13254860688519
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 541 689 1328 1476
+
+
+
+
+# name: 11
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1445.5628966322836 1287.0979949386644
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 9
+Object_11
+
+
+# name: minorAxis
+# type: scalar
+146.02022709414132
+
+
+# name: majorAxis
+# type: scalar
+229.08895671328241
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1173 1402 1331 1560
+
+
+
+
+# name: 12
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1538.0143355034302 1408.7900309068225
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 9
+Object_12
+
+
+# name: minorAxis
+# type: scalar
+138.39978526242689
+
+
+# name: majorAxis
+# type: scalar
+141.49721562170794
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1338 1480 1467 1609
+
+
+
+
+# name: 13
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1635.5980631179791 263.47385886495937
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 9
+Object_13
+
+
+# name: minorAxis
+# type: scalar
+132.64821734133193
+
+
+# name: majorAxis
+# type: scalar
+143.06508365452967
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 192 335 1564 1707
+
+
+
+
+# name: 14
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1757.5373497230969 711.91645278940814
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 9
+Object_14
+
+
+# name: minorAxis
+# type: scalar
+134.1222386863767
+
+
+# name: majorAxis
+# type: scalar
+142.38789317937091
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 641 783 1686 1829
+
+
+
+
+# name: 15
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1881.9607207550175 1536.6482982171776
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 9
+Object_15
+
+
+# name: minorAxis
+# type: scalar
+140.95750273466447
+
+
+# name: majorAxis
+# type: scalar
+203.35265892567546
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1435 1638 1780 1984
+
+
+
+
+# name: 16
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1714.7602897596305 64.670453298210731
+
+
+# name: at_edge
+# type: bool
+1
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 9
+Object_16
+
+
+# name: minorAxis
+# type: scalar
+136.69800735720426
+
+
+# name: majorAxis
+# type: scalar
+192.81815086340831
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 1 193 1618 1811
+
+
+
+
+# name: 17
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: centroid
+# type: matrix
+# rows: 1
+# columns: 2
+ 1878.9614037136039 307.49889057573256
+
+
+# name: at_edge
+# type: bool
+0
+
+
+# name: label
+# type: sq_string
+# elements: 1
+# length: 9
+Object_17
+
+
+# name: minorAxis
+# type: scalar
+138.80157028131381
+
+
+# name: majorAxis
+# type: scalar
+158.74047449047566
+
+
+# name: bbox
+# type: matrix
+# rows: 1
+# columns: 4
+ 228 387 1800 1958
+
+
+
+
+
+
+# name: stackedImg
+# type: string
+# elements: 0
+
+
+# name: stacked
+# type: sq_string
+# elements: 1
+# length: 27
+stacked/X1_Y1_Z-STACKED.jpg
+
+
+
+
+
+
+# name: stacked
+# type: bool
+0
+
+
+
+

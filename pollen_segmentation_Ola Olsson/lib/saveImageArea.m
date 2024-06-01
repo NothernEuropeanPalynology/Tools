@@ -23,12 +23,13 @@ function saveImageArea(bboxes, files, dst)
             try
                roi = img(bbox(1):bbox(2), bbox(3):bbox(4), :);
                % Construct the output filename
-               if bboxes.(xField).at_edge
-                 output_filename = fullfile(dst, strcat("E", "_", boxLabel,'_', name, ext));
+
+               if bboxes.(xField).at_edge == 1
+                 output_filename = fullfile(dst, "edge/",strcat("E_", boxLabel,'_', name, ext));
                else
                  output_filename = fullfile(dst, strcat(boxLabel,'_', name, ext));
                endif
-               output_filename = fullfile(dst, strcat(boxLabel,'_', name, ext));
+
                % Write the ROI to the output file
                imwrite(roi, output_filename);
 
